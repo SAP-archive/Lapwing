@@ -1,0 +1,2 @@
+# Lapwing
+LanguageTool (see www.languagetool.org) is an open source checker related to various linguistic levels (e.g. spelling, terminology, grammar, style) for a wide range of languages (including Chinese and Russian). It derives its power from the use of Natural Language Processing (NLP) technology. It is embedded for example into OpenOffice/LibreOffice and can be used in other fashions (e.g. as Java library or as stand-alone HTTP server). The checking (and correction) that can be performed is customizable.
