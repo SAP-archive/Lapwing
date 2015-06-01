@@ -13,6 +13,12 @@ In a sense, “Lapwing” implements a “Web API” that can be deployed to/and
  
 “Lapwing” is meant to be a starting point for additional, standards-based multilingual processing based on Web Services. Accordingly, “Lapwing” does not come with a lot of bells and whistles. 
 
+##Get it!
+In order to get Lapwing to run on an Servlet Container of your choice, you just need to do the following:
+- clone the repository and build the sources through Maven
+- deploy *lapwing.war* to your server 
+- Lapwing's WSDL will be accessible at: http://host:port/lapwing/services/itsprocessor?wsdl
+
 ##Libraries Lapwing builds upon
 LanguageTool (see www.languagetool.org) is an open source checker related to various linguistic levels (e.g. spelling, terminology, grammar, style) for a wide range of languages (including Chinese and Russian). It derives its power from the use of Natural Language Processing (NLP) technology. It is embedded for example into OpenOffice/LibreOffice and can be used in other fashions (e.g. as Java library or as stand-alone HTTP server). The checking (and correction) that can be performed is customizable. 
  
