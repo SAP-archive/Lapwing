@@ -14,7 +14,7 @@ In a sense, “Lapwing” implements a “Web API” that can be deployed to/and
 “Lapwing” is meant to be a starting point for additional, standards-based multilingual processing based on Web Services. Accordingly, “Lapwing” does not come with a lot of bells and whistles. 
 
 ##Get it!
-In order to get Lapwing to run on an Servlet Container of your choice, you just need to do the following:
+In order to get Lapwing to run on an Java Servlet Container of your choice, you just need to do the following:
 - clone the repository and build the sources through Maven
 - deploy *lapwing.war* to your server 
 - Lapwing's WSDL will be accessible at: http://host:port/lapwing/services/itsprocessor?wsdl
