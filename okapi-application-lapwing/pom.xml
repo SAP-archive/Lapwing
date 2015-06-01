@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.sf.okapi.applications</groupId>
+	<artifactId>okapi-application-lapwing</artifactId>
+	<version>0.1</version>
+	<packaging>war</packaging>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+
+				</configuration>
+			</plugin>
+		</plugins>
+		<finalName>lapwing</finalName>
+	</build>
+	<dependencies>
+		<!-- okapi -->
+		<dependency>
+			<groupId>net.sf.okapi.lib</groupId>
+			<artifactId>okapi-lib-xliff</artifactId>
+			<version>${okapi.xliff.lib.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.okapi</groupId>
+			<artifactId>okapi-core</artifactId>
+			<version>${okapi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.okapi.steps</groupId>
+			<artifactId>okapi-step-common</artifactId>
+			<version>${okapi.version}</version>
+		</dependency>
+		<!-- language tool <dependency> <groupId>org.languagetool</groupId> <artifactId>language-en</artifactId> 
+			<version>${lt.version}</version> </dependency> <dependency> <groupId>org.languagetool</groupId> 
+			<artifactId>language-fr</artifactId> <version>${lt.version}</version> </dependency> 
+			<dependency> <groupId>org.languagetool</groupId> <artifactId>language-it</artifactId> 
+			<version>${lt.version}</version> </dependency> <dependency> <groupId>org.languagetool</groupId> 
+			<artifactId>languagetool-core</artifactId> <version>${lt.version}</version> 
+			</dependency> -->
+		<!-- servlet container -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${servlet.api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${apache.cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${apache.cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.okapi.steps</groupId>
+			<artifactId>okapi-step-languagetool</artifactId>
+			<version>${okapi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.okapi.filters</groupId>
+			<artifactId>okapi-filter-xliff</artifactId>
+			<version>${okapi.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>stax-api</artifactId>
+					<groupId>javax.xml.stream</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>woodstox-core-lgpl</artifactId>
+					<groupId>org.codehaus.woodstox</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.okapi.lib</groupId>
+			<artifactId>okapi-lib-languagetool</artifactId>
+			<version>${okapi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<properties>
+		<apache.cxf.version>2.7.8</apache.cxf.version>
+		<lt.version>2.6</lt.version>
+		<okapi.version>0.27-SNAPSHOT</okapi.version>
+		<okapi.xliff.lib.version>0.19-SNAPSHOT</okapi.xliff.lib.version>
+		<junit.version>4.11</junit.version>
+		<servlet.api.version>2.4</servlet.api.version>
+	</properties>
+</project>
