@@ -1,8 +1,4 @@
 #Lapwing
-##Libraries Lapwing builds upon
-LanguageTool (see www.languagetool.org) is an open source checker related to various linguistic levels (e.g. spelling, terminology, grammar, style) for a wide range of languages (including Chinese and Russian). It derives its power from the use of Natural Language Processing (NLP) technology. It is embedded for example into OpenOffice/LibreOffice and can be used in other fashions (e.g. as Java library or as stand-alone HTTP server). The checking (and correction) that can be performed is customizable. 
- 
-Okapi (see okapi.opentag.com) is a "cross-platform and free open-source set of components and applications that offer extensive support for localizing and translating documentation and Software" (from the Okapi Web site). 
 ##What is Lapwing?
 “Lapwing” implements a “SOAP wrapper” for functionality that uses Okapi and LanguageTool. "Lapwing" features the following:
  
@@ -16,6 +12,12 @@ Okapi (see okapi.opentag.com) is a "cross-platform and free open-source set of c
 In a sense, “Lapwing” implements a “Web API” that can be deployed to/and used in a wide range of environments. After “Lapwing” has been deployed to a plain Java Servlet Engine, or a JEE-compliant Java application server, its capabilities are exposed as SOAP endpoint that allows you to process an XLIFF file with LanguageTool. 
  
 “Lapwing” is meant to be a starting point for additional, standards-based multilingual processing based on Web Services. Accordingly, “Lapwing” does not come with a lot of bells and whistles. 
+
+##Libraries Lapwing builds upon
+LanguageTool (see www.languagetool.org) is an open source checker related to various linguistic levels (e.g. spelling, terminology, grammar, style) for a wide range of languages (including Chinese and Russian). It derives its power from the use of Natural Language Processing (NLP) technology. It is embedded for example into OpenOffice/LibreOffice and can be used in other fashions (e.g. as Java library or as stand-alone HTTP server). The checking (and correction) that can be performed is customizable. 
+ 
+Okapi (see okapi.opentag.com) is a "cross-platform and free open-source set of components and applications that offer extensive support for localizing and translating documentation and Software" (from the Okapi Web site). 
+
 ##Current known limitations
 Design decisions that have been made are the following: 
 * Web Service based on SOAP protocol/paradigm (as opposed to ReST) 
