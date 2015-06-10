@@ -102,8 +102,8 @@
 	<properties>
 		<apache.cxf.version>2.7.8</apache.cxf.version>
 		<lt.version>2.6</lt.version>
-		<okapi.version>0.27-SNAPSHOT</okapi.version>
-		<okapi.xliff.lib.version>0.19-SNAPSHOT</okapi.xliff.lib.version>
+		<okapi.version>0.27</okapi.version>
+		<okapi.xliff.lib.version>0.14</okapi.xliff.lib.version>
 		<junit.version>4.11</junit.version>
 		<servlet.api.version>2.4</servlet.api.version>
 	</properties>
