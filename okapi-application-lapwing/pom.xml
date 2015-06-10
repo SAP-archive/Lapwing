@@ -29,11 +29,6 @@
 	<dependencies>
 		<!-- okapi -->
 		<dependency>
-			<groupId>net.sf.okapi.lib</groupId>
-			<artifactId>okapi-lib-xliff</artifactId>
-			<version>${okapi.xliff.lib.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>net.sf.okapi</groupId>
 			<artifactId>okapi-core</artifactId>
 			<version>${okapi.version}</version>
@@ -42,30 +37,6 @@
 			<groupId>net.sf.okapi.steps</groupId>
 			<artifactId>okapi-step-common</artifactId>
 			<version>${okapi.version}</version>
-		</dependency>
-		<!-- language tool <dependency> <groupId>org.languagetool</groupId> <artifactId>language-en</artifactId> 
-			<version>${lt.version}</version> </dependency> <dependency> <groupId>org.languagetool</groupId> 
-			<artifactId>language-fr</artifactId> <version>${lt.version}</version> </dependency> 
-			<dependency> <groupId>org.languagetool</groupId> <artifactId>language-it</artifactId> 
-			<version>${lt.version}</version> </dependency> <dependency> <groupId>org.languagetool</groupId> 
-			<artifactId>languagetool-core</artifactId> <version>${lt.version}</version> 
-			</dependency> -->
-		<!-- servlet container -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>${servlet.api.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-frontend-jaxws</artifactId>
-			<version>${apache.cxf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-transports-http</artifactId>
-			<version>${apache.cxf.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sf.okapi.steps</groupId>
@@ -92,6 +63,25 @@
 			<artifactId>okapi-lib-languagetool</artifactId>
 			<version>${okapi.version}</version>
 		</dependency>
+		<!-- servlet container -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${servlet.api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- rest libs -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${apache.cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${apache.cxf.version}</version>
+		</dependency>
+		<!-- test -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -103,7 +93,6 @@
 		<apache.cxf.version>2.7.8</apache.cxf.version>
 		<lt.version>2.6</lt.version>
 		<okapi.version>0.27</okapi.version>
-		<okapi.xliff.lib.version>0.14</okapi.xliff.lib.version>
 		<junit.version>4.11</junit.version>
 		<servlet.api.version>2.4</servlet.api.version>
 	</properties>
