@@ -96,4 +96,12 @@
 		<junit.version>4.11</junit.version>
 		<servlet.api.version>2.4</servlet.api.version>
 	</properties>
+	<repositories>
+		<repository>
+			<id>cloudbees-okapi</id>
+			<name>okapi-repository-on-CloudBees</name>
+			<url>http://repository-okapi.forge.cloudbees.com/release</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
 </project>
