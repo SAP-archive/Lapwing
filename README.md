@@ -28,3 +28,6 @@ Okapi (see okapi.opentag.com) is a "cross-platform and free open-source set of c
 Design decisions that have been made are the following: 
 * Web Service based on SOAP protocol/paradigm (as opposed to ReST) 
 * No support for extensive parameterization (the only input parameters are source language, target language, encoding, and file)
+
+##Get connected!
+Just get in touch to discuss through our mailing list lapwing-users@googlegroups.com
