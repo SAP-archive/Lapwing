@@ -13,6 +13,7 @@ import net.sf.okapi.common.filterwriter.XLIFFWriter;
 import net.sf.okapi.common.filterwriter.XLIFFWriterParameters;
 import net.sf.okapi.common.pipelinedriver.PipelineDriver;
 import net.sf.okapi.common.resource.RawDocument;
+import net.sf.okapi.lib.tkit.writer.XLIFFAndSkeletonWriter;
 import net.sf.okapi.steps.common.FilterEventsToRawDocumentStep;
 import net.sf.okapi.steps.common.FilterEventsWriterStep;
 import net.sf.okapi.steps.common.RawDocumentToFilterEventsStep;
@@ -21,15 +22,18 @@ import net.sf.okapi.steps.languagetool.Parameters;
 
 public class Pipeline {
 
-	private static final String CFG_CLASS = "net.sf.okapi.filters.xliff.XLIFFFilter";
+	private static final String CFG_CLASS_XLIFF = "net.sf.okapi.filters.xliff.XLIFFFilter";
+	private static final String CFG_CLASS_XML = "net.sf.okapi.filters.xml.XMLFilter";
 	private static final String OKF_XLIFF_CONFIG_ID = "okf_xliff";
+	private static final String OKF_XML_CONFIG_ID = "okf_xml";
 	private static final String TMP_FILE_EXT = ".tmp";
 	private static final String TMP_FILE_NAME = "tempFile";
 	private IFilterConfigurationMapper fcMapper;
 
 	public Pipeline() {
 		fcMapper = new FilterConfigurationMapper();
-		fcMapper.addConfigurations(Pipeline.CFG_CLASS);
+		fcMapper.addConfigurations(Pipeline.CFG_CLASS_XML);
+
 	}
 
 	private String getOutputEncoding(RawDocument rd) {
@@ -77,7 +81,9 @@ public class Pipeline {
 
 	private byte[] internalCheck(RawDocument rd) throws Exception {
 
-		rd.setFilterConfigId(Pipeline.OKF_XLIFF_CONFIG_ID);
+		rd.setFilterConfigId(Pipeline.OKF_XML_CONFIG_ID);
+		
+
 		System.out.println(rd.getStream().markSupported());
 		// Create the driver
 		PipelineDriver driver = new PipelineDriver();
@@ -89,20 +95,22 @@ public class Pipeline {
 
 		// Raw document to filter events step
 		RawDocumentToFilterEventsStep rd2feStep = new RawDocumentToFilterEventsStep();
+
 		driver.addStep(rd2feStep);
 
-		// languagetool step
+		// languagetool step - disabled
 		LanguageToolStep ltStep = new LanguageToolStep();
 		Parameters parameters = new Parameters();
 		parameters.setCheckSource(true);
 		parameters.setCheckSpelling(true);
 		parameters.setEnableFalseFriends(true);
-		driver.addStep(ltStep);
+		// driver.addStep(ltStep); let's not annotate the document
 
-		FilterEventsToRawDocumentStep fetrdStep = new FilterEventsToRawDocumentStep();
+		//FilterEventsToRawDocumentStep fetrdStep = new FilterEventsToRawDocumentStep();
 		// Filter events to raw document final step (using the XLIFF writer)
 		FilterEventsWriterStep fewStep = new FilterEventsWriterStep();
 
+		//XLIFFAndSkeletonWriter  writer = new XLIFFAndSkeletonWriter();
 		XLIFFWriter writer = new XLIFFWriter();
 		XLIFFWriterParameters paramsXliff = (XLIFFWriterParameters) writer
 				.getParameters();
@@ -116,7 +124,7 @@ public class Pipeline {
 
 		File temporary = File.createTempFile(Pipeline.TMP_FILE_NAME,
 				Pipeline.TMP_FILE_EXT);
-		driver.addStep(fetrdStep);
+		driver.addStep(fewStep);
 		driver.addBatchItem(rd, temporary.toURI(), getOutputEncoding(rd));
 
 		// Process

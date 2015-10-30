@@ -29,6 +29,11 @@
 	<dependencies>
 		<!-- okapi -->
 		<dependency>
+			<groupId>net.sf.okapi.lib</groupId>
+			<artifactId>okapi-lib-tkit</artifactId>
+			<version>${okapi.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>net.sf.okapi</groupId>
 			<artifactId>okapi-core</artifactId>
 			<version>${okapi.version}</version>
@@ -47,6 +52,21 @@
 			<groupId>net.sf.okapi.filters</groupId>
 			<artifactId>okapi-filter-xliff</artifactId>
 			<version>${okapi.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>stax-api</artifactId>
+					<groupId>javax.xml.stream</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>woodstox-core-lgpl</artifactId>
+					<groupId>org.codehaus.woodstox</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.okapi.filters</groupId>
+			<artifactId>okapi-filter-xml</artifactId>
+			<version>${okapi.xml.filter.version}</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>stax-api</artifactId>
@@ -92,9 +112,10 @@
 	<properties>
 		<apache.cxf.version>2.7.8</apache.cxf.version>
 		<lt.version>2.6</lt.version>
-		<okapi.version>0.27</okapi.version>
+		<okapi.version>0.28</okapi.version>
 		<junit.version>4.11</junit.version>
 		<servlet.api.version>2.4</servlet.api.version>
+		<okapi.xml.filter.version>0.18</okapi.xml.filter.version>
 	</properties>
 	<repositories>
 		<repository>
