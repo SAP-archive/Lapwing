@@ -100,20 +100,6 @@ public class Pipeline {
 		driver.addStep(ltStep);
 
 		FilterEventsToRawDocumentStep fetrdStep = new FilterEventsToRawDocumentStep();
-		// Filter events to raw document final step (using the XLIFF writer)
-		FilterEventsWriterStep fewStep = new FilterEventsWriterStep();
-
-		XLIFFWriter writer = new XLIFFWriter();
-		XLIFFWriterParameters paramsXliff = (XLIFFWriterParameters) writer
-				.getParameters();
-		paramsXliff.setPlaceholderMode(true);
-		paramsXliff.setCopySource(false);
-		paramsXliff.setIncludeAltTrans(true);
-		paramsXliff.setIncludeCodeAttrs(true);
-		writer.setOptions(rd.getSourceLocale(), getOutputEncoding(rd));
-
-		fewStep.setFilterWriter(writer);
-
 		File temporary = File.createTempFile(Pipeline.TMP_FILE_NAME,
 				Pipeline.TMP_FILE_EXT);
 		driver.addStep(fetrdStep);
