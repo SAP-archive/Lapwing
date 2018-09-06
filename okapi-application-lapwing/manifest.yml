@@ -3,5 +3,6 @@ applications:
   memory: 512M
   buildpack: sap_java_buildpack
   path: target/lapwing.war
+  # update route suffix depending on your actual target deployment
   routes:
   - route: lapwing.cfapps.sap.hana.ondemand.com
