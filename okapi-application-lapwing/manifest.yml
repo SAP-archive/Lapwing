@@ -1,0 +1,7 @@
+applications:
+- name: lapwing
+  memory: 512M
+  buildpack: sap_java_buildpack
+  path: target/lapwing.war
+  routes:
+  - route: lapwing.cfapps.sap.hana.ondemand.com
