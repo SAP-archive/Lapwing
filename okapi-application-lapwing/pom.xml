@@ -93,7 +93,7 @@
 		<apache.cxf.version>2.7.8</apache.cxf.version>
 		<lt.version>2.6</lt.version>
 		<okapi.version>0.27</okapi.version>
-		<junit.version>4.11</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<servlet.api.version>2.4</servlet.api.version>
 	</properties>
 	<repositories>
